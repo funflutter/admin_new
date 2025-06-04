@@ -14,7 +14,7 @@ class LoginPage extends StatelessWidget {
             children: [
               Text(
                 "Admin Login",
-                style: AppFonts.Regular24,
+                style: AppFonts.regular32(Colors.black),
               ),
             ],
           ),
