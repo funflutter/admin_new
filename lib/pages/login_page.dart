@@ -1,4 +1,7 @@
 import 'package:admin_ecom/components/login_textfields.dart';
+import 'package:admin_ecom/components/my_button.dart';
+import 'package:admin_ecom/pages/home_page.dart';
+import 'package:admin_ecom/responsive.dart';
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
 
@@ -13,11 +16,31 @@ class _LoginPageState extends State<LoginPage> {
   // controllers
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  final _formKey = GlobalKey<FormState>(); // define at class level
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
+    height = MediaQuery.sizeOf(context).height;
+    width = MediaQuery.sizeOf(context).width;
     return Scaffold(
+      bottomSheet: Padding(
+        padding:
+            const EdgeInsets.only(left: 25.0, right: 25, top: 20, bottom: 40),
+        child: MyButton(
+          text: "Sign In",
+          onTap: () {
+            if (_formKey.currentState!.validate()) {
+              // All validations passed
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
+              );
+            }
+          },
+        ),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.all(20.0),
