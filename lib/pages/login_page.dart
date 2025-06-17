@@ -28,17 +28,12 @@ class _LoginPageState extends State<LoginPage> {
             const EdgeInsets.only(left: 25.0, right: 25, top: 20, bottom: 40),
         child: MyButton(
           text: "Sign In",
-          onTap: () {
-            if (_formKey.currentState!.validate()) {
-              // All validations passed
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HomePage(),
-                ),
-              );
-            }
-          },
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomePage(),
+            ),
+          ),
         ),
       ),
       body: SafeArea(
@@ -75,9 +70,16 @@ class _LoginPageState extends State<LoginPage> {
 
                 // pass text field
                 LoginTextfields(
+                  isPassword: true,
                   hintText: "Enter Password",
                   labelText: "Enter Password",
                   controller: passwordController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Password cannot be empty';
+                    }
+                    return null;
+                  },
                 ),
               ],
             ),
