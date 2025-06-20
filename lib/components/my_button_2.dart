@@ -1,12 +1,12 @@
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
 
-class MyButton extends StatelessWidget {
+class MyButtonTwo extends StatelessWidget {
   final void Function()? onTap;
   final String text;
   final TextStyle? style;
 
-  const MyButton({
+  const MyButtonTwo({
     super.key,
     required this.onTap,
     required this.text,
@@ -21,13 +21,17 @@ class MyButton extends StatelessWidget {
         width: double.infinity,
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Colors.black,
+          border: Border.all(
+            color: Colors.black45,
+          ),
           borderRadius: BorderRadius.circular(100),
         ),
         child: Text(
           textAlign: TextAlign.center,
           text,
-          style: AppFonts.Medium16(Colors.white),
+          style: AppFonts.Medium14(
+            Colors.black,
+          ),
         ),
       ),
     );

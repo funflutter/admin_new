@@ -1,23 +1,23 @@
 import 'package:admin_ecom/components/login_textfields.dart';
 import 'package:admin_ecom/components/my_button_1.dart';
 import 'package:admin_ecom/components/my_button_2.dart';
-import 'package:admin_ecom/pages/bottom_nav_control.dart';
-import 'package:admin_ecom/pages/signup_page.dart';
+import 'package:admin_ecom/pages/login_page.dart';
 import 'package:admin_ecom/responsive.dart';
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignupPageState extends State<SignupPage> {
   // controllers
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final rePasswordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -27,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(20),
           child: Form(
             key: _formKey,
             child: Column(
@@ -35,12 +35,12 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 // Message
                 Text(
-                  "Admin Login",
+                  "Admin SignUp",
                   style: AppFonts.regular32(Colors.black),
                 ),
                 const SizedBox(height: 24),
 
-                // email text field
+                // enter email text field
                 LoginTextfields(
                   hintText: "Enter Email",
                   labelText: "Enter Email",
@@ -56,9 +56,9 @@ class _LoginPageState extends State<LoginPage> {
                   },
                 ),
 
-                const SizedBox(height: 16),
+                SizedBox(height: 16),
 
-                // pass text field
+                // enter password
                 LoginTextfields(
                   isPassword: true,
                   hintText: "Enter Password",
@@ -72,15 +72,31 @@ class _LoginPageState extends State<LoginPage> {
                   },
                 ),
 
+                SizedBox(height: 16),
+
+                // re-enter password
+                LoginTextfields(
+                  isPassword: true,
+                  hintText: "Re-Enter Password",
+                  labelText: "Re-Enter Password",
+                  controller: rePasswordController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Password cannot be empty';
+                    }
+                    return null;
+                  },
+                ),
+
                 const SizedBox(height: 24),
 
                 // sign in button
                 MyButtonOne(
-                  text: "SignIn",
+                  text: "SignUp",
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => BottomNavControl(),
+                      builder: (context) => LoginPage(),
                     ),
                   ),
                 ),
@@ -118,11 +134,11 @@ class _LoginPageState extends State<LoginPage> {
 
                 // sign up button
                 MyButtonTwo(
-                  text: "SignUp",
+                  text: "SignIn",
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SignupPage(),
+                      builder: (context) => LoginPage(),
                     ),
                   ),
                 ),

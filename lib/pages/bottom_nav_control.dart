@@ -1,5 +1,5 @@
 import 'package:admin_ecom/components/bottom_nav_bar.dart';
-import 'package:admin_ecom/pages/My_Products.dart';
+import 'package:admin_ecom/pages/my_products.dart';
 import 'package:admin_ecom/pages/home_page.dart';
 import 'package:admin_ecom/pages/my_history.dart';
 import 'package:admin_ecom/pages/my_profile.dart';
