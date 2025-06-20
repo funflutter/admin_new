@@ -37,6 +37,7 @@ dependencies:
   google_fonts: ^6.2.1
   heroicons: ^0.11.0
   phosphor_flutter: ^2.1.0
+  google_nav_bar: ^5.0.7
 
 dev_dependencies:
   flutter_test:

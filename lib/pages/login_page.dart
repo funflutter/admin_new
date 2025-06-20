@@ -1,6 +1,6 @@
 import 'package:admin_ecom/components/login_textfields.dart';
 import 'package:admin_ecom/components/my_button.dart';
-import 'package:admin_ecom/pages/home_page.dart';
+import 'package:admin_ecom/pages/bottom_nav_control.dart';
 import 'package:admin_ecom/responsive.dart';
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => HomePage(),
+              builder: (context) => BottomNavControl(),
             ),
           ),
         ),
