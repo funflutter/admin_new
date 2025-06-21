@@ -36,7 +36,7 @@ class _SignupPageState extends State<SignupPage> {
                 // Message
                 Text(
                   "Admin SignUp",
-                  style: AppFonts.regular32(Colors.black),
+                  style: AppFonts.Regular28(Colors.black),
                 ),
                 const SizedBox(height: 24),
 

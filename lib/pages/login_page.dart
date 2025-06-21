@@ -1,7 +1,7 @@
 import 'package:admin_ecom/components/login_textfields.dart';
 import 'package:admin_ecom/components/my_button_1.dart';
 import 'package:admin_ecom/components/my_button_2.dart';
-import 'package:admin_ecom/pages/bottom_nav_control.dart';
+import 'package:admin_ecom/pages/register_company.dart';
 import 'package:admin_ecom/pages/signup_page.dart';
 import 'package:admin_ecom/responsive.dart';
 import 'package:admin_ecom/theme/global_font.dart';
@@ -36,40 +36,54 @@ class _LoginPageState extends State<LoginPage> {
                 // Message
                 Text(
                   "Admin Login",
-                  style: AppFonts.regular32(Colors.black),
+                  style: AppFonts.Regular28(Colors.black),
                 ),
                 const SizedBox(height: 24),
 
-                // email text field
-                LoginTextfields(
-                  hintText: "Enter Email",
-                  labelText: "Enter Email",
-                  controller: emailController,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Email cannot be empty';
-                    }
-                    if (!value.trim().endsWith('@gmail.com')) {
-                      return 'Email must end with @gmail.com';
-                    }
-                    return null;
-                  },
-                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    // email text field
+                    LoginTextfields(
+                      hintText: "Enter Email",
+                      labelText: "Enter Email",
+                      controller: emailController,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Email cannot be empty';
+                        }
+                        if (!value.trim().endsWith('@gmail.com')) {
+                          return 'Email must end with @gmail.com';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 16),
 
-                const SizedBox(height: 16),
+                    // pass text field
+                    LoginTextfields(
+                      isPassword: true,
+                      hintText: "Enter Password",
+                      labelText: "Enter Password",
+                      controller: passwordController,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Password cannot be empty';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 8),
 
-                // pass text field
-                LoginTextfields(
-                  isPassword: true,
-                  hintText: "Enter Password",
-                  labelText: "Enter Password",
-                  controller: passwordController,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Password cannot be empty';
-                    }
-                    return null;
-                  },
+                    GestureDetector(
+                      child: Text(
+                        "Forgot Password?",
+                        style: AppFonts.Medium14(
+                          const Color.fromARGB(255, 6, 124, 220),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
 
                 const SizedBox(height: 24),
@@ -80,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => BottomNavControl(),
+                      builder: (context) => RegisterCompany(),
                     ),
                   ),
                 ),
