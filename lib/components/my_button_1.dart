@@ -5,12 +5,22 @@ class MyButtonOne extends StatelessWidget {
   final void Function()? onTap;
   final String text;
   final TextStyle? style;
+  final Color? color;
+  final Color? textColor;
+  final BoxBorder? border;
+  final double? height;
+  final double? width;
 
   const MyButtonOne({
     super.key,
     required this.onTap,
     required this.text,
     this.style,
+    this.color,
+    this.textColor,
+    this.border,
+    this.height,
+    this.width,
   });
 
   @override
@@ -18,16 +28,20 @@ class MyButtonOne extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: double.infinity,
-        padding: EdgeInsets.all(20),
+        height: height,
+        width: width,
+        // padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Colors.black,
+          border: border,
+          color: color,
           borderRadius: BorderRadius.circular(100),
         ),
-        child: Text(
-          textAlign: TextAlign.center,
-          text,
-          style: AppFonts.Medium14(Colors.white),
+        child: Center(
+          child: Text(
+            // textAlign: TextAlign.center,
+            text,
+            style: AppFonts.Medium14(textColor),
+          ),
         ),
       ),
     );

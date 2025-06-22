@@ -1,6 +1,5 @@
 import 'package:admin_ecom/components/login_textfields.dart';
 import 'package:admin_ecom/components/my_button_1.dart';
-import 'package:admin_ecom/components/my_button_2.dart';
 import 'package:admin_ecom/pages/login_page.dart';
 import 'package:admin_ecom/responsive.dart';
 import 'package:admin_ecom/theme/global_font.dart';
@@ -25,6 +24,7 @@ class _SignupPageState extends State<SignupPage> {
     height = MediaQuery.sizeOf(context).height;
     width = MediaQuery.sizeOf(context).width;
     return Scaffold(
+      backgroundColor: Color(0xffF9FBFF),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.all(20),
@@ -33,10 +33,11 @@ class _SignupPageState extends State<SignupPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(height: height / 4),
                 // Message
                 Text(
                   "Admin SignUp",
-                  style: AppFonts.Regular28(Colors.black),
+                  style: AppFonts.Medium24(Colors.black),
                 ),
                 const SizedBox(height: 24),
 
@@ -92,7 +93,9 @@ class _SignupPageState extends State<SignupPage> {
 
                 // sign in button
                 MyButtonOne(
-                  text: "SignUp",
+                  color: Colors.black,
+                  textColor: Colors.white,
+                  text: "Sign Up",
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -133,8 +136,11 @@ class _SignupPageState extends State<SignupPage> {
                 const SizedBox(height: 24),
 
                 // sign up button
-                MyButtonTwo(
-                  text: "SignIn",
+                MyButtonOne(
+                  color: Colors.white,
+                  textColor: Colors.black,
+                  border: Border.all(color: Colors.black),
+                  text: "Sign In",
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(

@@ -40,11 +40,11 @@ class _RegisterCompanyState extends State<RegisterCompany> {
                   style: AppFonts.Medium24(Colors.black),
                 ),
 
-                // SizedBox(height: 24),
+                SizedBox(height: 12),
 
                 // company name
                 LoginTextfields(
-                  hintText: "Enter Company Name",
+                  // hintText: "Enter Company Name",
                   labelText: "Enter Company Name",
                   controller: companyNameController,
                 ),
@@ -53,7 +53,7 @@ class _RegisterCompanyState extends State<RegisterCompany> {
 
                 // company name
                 LoginTextfields(
-                  hintText: "Enter Email Id",
+                  //  hintText: "Enter Email Id",
                   labelText: "Enter Email Id",
                   controller: companyEmailController,
                 ),
@@ -62,7 +62,7 @@ class _RegisterCompanyState extends State<RegisterCompany> {
 
                 // company name
                 LoginTextfields(
-                  hintText: "Enter Phone No",
+                  // hintText: "Enter Phone No",
                   labelText: "Enter Phone No",
                   controller: companyPhoneController,
                 ),
@@ -82,6 +82,11 @@ class _RegisterCompanyState extends State<RegisterCompany> {
                 ),
                 MyDropdownField(
                   hintText: 'Select Country',
+                ),
+
+                LoginTextfields(
+                  labelText: "Address",
+                  conatinerExpand: true,
                 ),
 
                 LoginTextfields(

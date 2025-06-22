@@ -7,8 +7,8 @@ class LoginTextfields extends StatefulWidget {
   final TextEditingController? controller;
   final String? labelText;
   final bool isPassword;
-  final bool expands;
-
+  final bool conatinerExpand;
+  final Widget? prefixIcon;
   final String? containerHeight;
 
   const LoginTextfields({
@@ -18,8 +18,9 @@ class LoginTextfields extends StatefulWidget {
     this.validator,
     this.labelText,
     this.isPassword = false,
-    this.expands = false,
+    this.conatinerExpand = false,
     this.containerHeight,
+    this.prefixIcon,
   });
 
   @override
@@ -39,9 +40,8 @@ class _LoginTextfieldsState extends State<LoginTextfields> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLines: widget.expands ? null : 1,
+      maxLines: widget.conatinerExpand ? 4 : 1,
       textAlign: TextAlign.left,
-      expands: widget.expands,
       textAlignVertical: TextAlignVertical.top,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       controller: widget.controller,
@@ -49,12 +49,14 @@ class _LoginTextfieldsState extends State<LoginTextfields> {
       obscureText: widget.isPassword ? _obscureText : false,
       style: AppFonts.Medium16(Colors.black),
       decoration: InputDecoration(
+        prefixIcon: widget.prefixIcon,
         alignLabelWithHint: true,
         fillColor: Color(0xffFFFFFF),
         filled: true,
+        hintText: widget.hintText,
         hintStyle: AppFonts.Medium16(Colors.black38),
         labelText: widget.labelText,
-        labelStyle: AppFonts.Medium16(Colors.black54),
+        labelStyle: AppFonts.Medium16(Colors.black38),
         contentPadding: const EdgeInsets.symmetric(
           vertical: 18,
           horizontal: 18,

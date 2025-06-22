@@ -27,16 +27,19 @@ class MyDropdownField extends StatelessWidget {
         ),
         offset: const Offset(0, -4),
       ),
+      isExpanded: true,
       decoration: InputDecoration(
         hintText: hintText,
         iconColor: Colors.transparent,
         fillColor: Color(0xffFFFFFF),
+        hintTextDirection: TextDirection.ltr,
         filled: true,
         hintStyle: AppFonts.Medium16(Colors.black54),
         contentPadding: const EdgeInsets.symmetric(
           vertical: 18,
           horizontal: 18,
         ),
+        alignLabelWithHint: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
         ),
@@ -67,10 +70,12 @@ class MyDropdownField extends StatelessWidget {
       ),
       iconStyleData: IconStyleData(
         icon: SizedBox(
-          child: SvgPicture.asset(
-            'assets/svg/arrow_down.svg',
-            height: 8,
-            width: 8,
+          height: 24,
+          width: 24,
+          child: Center(
+            child: SvgPicture.asset(
+              'assets/svg/arrow_down.svg',
+            ),
           ),
         ),
       ),
