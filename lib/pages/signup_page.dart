@@ -37,7 +37,7 @@ class _SignupPageState extends State<SignupPage> {
                 // Message
                 Text(
                   "Admin SignUp",
-                  style: AppFonts.Medium24(Colors.black),
+                  style: AppFonts.regular32(Colors.black),
                 ),
                 const SizedBox(height: 24),
 
@@ -93,6 +93,7 @@ class _SignupPageState extends State<SignupPage> {
 
                 // sign in button
                 MyButtonOne(
+                  height: 60,
                   color: Colors.black,
                   textColor: Colors.white,
                   text: "Sign Up",
@@ -137,6 +138,7 @@ class _SignupPageState extends State<SignupPage> {
 
                 // sign up button
                 MyButtonOne(
+                  height: 60,
                   color: Colors.white,
                   textColor: Colors.black,
                   border: Border.all(color: Colors.black),

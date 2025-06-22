@@ -30,7 +30,6 @@ class MyButtonOne extends StatelessWidget {
       child: Container(
         height: height,
         width: width,
-        // padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
           border: border,
           color: color,
@@ -38,7 +37,6 @@ class MyButtonOne extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            // textAlign: TextAlign.center,
             text,
             style: AppFonts.Medium14(textColor),
           ),

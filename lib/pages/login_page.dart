@@ -37,17 +37,16 @@ class _LoginPageState extends State<LoginPage> {
                 // Message
                 Text(
                   "Admin Login",
-                  style: AppFonts.Medium28(Colors.black),
+                  style: AppFonts.regular32(Colors.black),
                 ),
 
-                const SizedBox(height: 24),
+                const SizedBox(height: 20),
 
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     // email text field
                     LoginTextfields(
-                      hintText: "Enter Email",
                       labelText: "Enter Email",
                       controller: emailController,
                       validator: (value) {
@@ -60,12 +59,12 @@ class _LoginPageState extends State<LoginPage> {
                         return null;
                       },
                     ),
+
                     const SizedBox(height: 16),
 
                     // pass text field
                     LoginTextfields(
                       isPassword: true,
-                      hintText: "Enter Password",
                       labelText: "Enter Password",
                       controller: passwordController,
                       validator: (value) {
@@ -92,6 +91,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 // sign in button
                 MyButtonOne(
+                  height: 60,
                   color: Colors.black,
                   textColor: Colors.white,
                   text: "Sign In",
@@ -136,6 +136,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 // sign up button
                 MyButtonOne(
+                  height: 60,
                   color: Colors.white,
                   textColor: Colors.black,
                   border: Border.all(color: Colors.black),

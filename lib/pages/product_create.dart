@@ -1,7 +1,7 @@
 import 'package:admin_ecom/components/dropdown_field.dart';
 import 'package:admin_ecom/components/login_textfields.dart';
 import 'package:admin_ecom/components/my_button_1.dart';
-import 'package:admin_ecom/pages/register_company.dart';
+import 'package:admin_ecom/pages/bottom_nav_control.dart';
 import 'package:admin_ecom/responsive.dart';
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
@@ -16,22 +16,30 @@ class ProductCreate extends StatelessWidget {
     width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       bottomSheet: Container(
-        color: Colors.white,
-        height: 80,
-        padding: EdgeInsets.all(10),
-        child: MyButtonOne(
-          // height: 50,
-          color: Colors.black,
-          textColor: Colors.white,
-          text: "Sign In",
-          onTap: () {
-            Navigator.push(
+        decoration: BoxDecoration(
+          color: Colors.white, // Background color
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade100, // Light shadow
+              offset: Offset(0, -2), // Shadow from top
+              blurRadius: 18,
+            ),
+          ],
+        ),
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
+        child: SafeArea(
+          child: MyButtonOne(
+            height: 60,
+            color: Colors.black,
+            textColor: Colors.white,
+            text: "Add Product",
+            onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => RegisterCompany(),
+                builder: (context) => BottomNavControl(),
               ),
-            );
-          },
+            ),
+          ),
         ),
       ),
       backgroundColor: Color(0xffF6F8FC),
@@ -41,7 +49,6 @@ class ProductCreate extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // message
                 Row(
@@ -63,7 +70,7 @@ class ProductCreate extends StatelessWidget {
                   ],
                 ),
 
-                SizedBox(height: 12),
+                SizedBox(height: 16),
 
                 Flexible(
                   child: SingleChildScrollView(
@@ -71,46 +78,44 @@ class ProductCreate extends StatelessWidget {
                       spacing: 16,
                       children: [
                         // company name
-                        LoginTextfields(
-                          prefixIcon: Icon(Icons.add),
-                          // hintText: "Enter Company Name",
-                          hintText: "Add Product Images",
-                          // controller: companyNameController,
+                        AbsorbPointer(
+                          child: LoginTextfields(
+                            prefixIcon: Icon(Icons.add),
+                            hintText: "Add Product Images",
+                          ),
                         ),
-
-                        // SizedBox(height: 16),
 
                         // company name
                         LoginTextfields(
-                          //  hintText: "Enter Email Id",
                           labelText: "Product Name",
-                          // controller: companyEmailController,
                         ),
 
+                        // product category
                         MyDropdownField(
                           hintText: 'Select Product Category',
                         ),
+
+                        // stock quantity
                         LoginTextfields(
-                          //  hintText: "Enter Email Id",
                           labelText: "Enter Stock Quantity",
-                          // controller: companyEmailController,
-                        ),
-                        LoginTextfields(
-                          //  hintText: "Enter Email Id",
-                          labelText: "MRP (₹)",
-                          // controller: companyEmailController,
-                        ),
-                        LoginTextfields(
-                          //  hintText: "Enter Email Id",
-                          labelText: "Selling Price (₹)",
-                          // controller: companyEmailController,
-                        ),
-                        LoginTextfields(
-                          //  hintText: "Enter Email Id",
-                          labelText: "Discount (%) (optional)",
-                          // controller: companyEmailController,
                         ),
 
+                        // MRP
+                        LoginTextfields(
+                          labelText: "MRP (₹)",
+                        ),
+
+                        // selling price
+                        LoginTextfields(
+                          labelText: "Selling Price (₹)",
+                        ),
+
+                        // discount price
+                        LoginTextfields(
+                          labelText: "Discount (%) (optional)",
+                        ),
+
+                        // choose offer validity (select date, time)
                         AbsorbPointer(
                           child: LoginTextfields(
                             prefixIcon: SizedBox(
@@ -121,26 +126,33 @@ class ProductCreate extends StatelessWidget {
                                     SvgPicture.asset('assets/svg/calender.svg'),
                               ),
                             ),
-                            //  hintText: "Enter Email Id",
-                            labelText: "Choose Offer Validity",
-                            // controller: companyEmailController,
+                            hintText: "Choose Offer Validity",
                           ),
                         ),
+
+                        // return policy
                         LoginTextfields(
                           conatinerExpand: true,
                           labelText: "Product Return Policy",
                         ),
+
+                        // short description
                         LoginTextfields(
                           conatinerExpand: true,
                           labelText: "Product Short Description",
                         ),
+
+                        // detail description
                         LoginTextfields(
                           conatinerExpand: true,
                           labelText: "Product Detail Description",
                         ),
+
+                        // delivery charge price
                         LoginTextfields(
                           labelText: "Delivery Charges (₹)",
                         ),
+
                         SizedBox(height: 60),
                       ],
                     ),

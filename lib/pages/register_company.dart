@@ -1,5 +1,7 @@
 import 'package:admin_ecom/components/dropdown_field.dart';
 import 'package:admin_ecom/components/login_textfields.dart';
+import 'package:admin_ecom/components/my_button_1.dart';
+import 'package:admin_ecom/pages/product_create.dart';
 import 'package:admin_ecom/responsive.dart';
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
@@ -24,15 +26,41 @@ class _RegisterCompanyState extends State<RegisterCompany> {
     height = MediaQuery.sizeOf(context).height;
     width = MediaQuery.sizeOf(context).width;
     return Scaffold(
+      bottomSheet: Container(
+        decoration: BoxDecoration(
+          color: Colors.white, // Background color
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade100, // Light shadow
+              offset: Offset(0, -2), // Shadow from top
+              blurRadius: 18,
+            ),
+          ],
+        ),
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
+        child: SafeArea(
+          child: MyButtonOne(
+            height: 60,
+            color: Colors.black,
+            textColor: Colors.white,
+            text: "Register",
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ProductCreate(),
+              ),
+            ),
+          ),
+        ),
+      ),
       backgroundColor: Color(0xffF6F8FC),
       body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(20),
-          child: Form(
-            key: _formKey,
+        child: Form(
+          key: _formKey,
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: 16,
               children: [
                 // message
                 Text(
@@ -40,58 +68,67 @@ class _RegisterCompanyState extends State<RegisterCompany> {
                   style: AppFonts.Medium24(Colors.black),
                 ),
 
-                SizedBox(height: 12),
+                SizedBox(height: 16),
 
                 // company name
-                LoginTextfields(
-                  // hintText: "Enter Company Name",
-                  labelText: "Enter Company Name",
-                  controller: companyNameController,
-                ),
+                Flexible(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      spacing: 16,
+                      children: [
+                        LoginTextfields(
+                          labelText: "Enter Company Name",
+                          controller: companyNameController,
+                        ), // company name
+                        LoginTextfields(
+                          labelText: "Enter Email Id",
+                          controller: companyEmailController,
+                        ),
 
-                // SizedBox(height: 16),
+                        // company name
+                        LoginTextfields(
+                          labelText: "Enter Phone No",
+                          controller: companyPhoneController,
+                        ),
 
-                // company name
-                LoginTextfields(
-                  //  hintText: "Enter Email Id",
-                  labelText: "Enter Email Id",
-                  controller: companyEmailController,
-                ),
+                        // SizedBox(height: 20),
 
-                // SizedBox(height: 16),
+                        // Company type
+                        MyDropdownField(
+                          hintText: 'Select Company Type',
+                        ),
 
-                // company name
-                LoginTextfields(
-                  // hintText: "Enter Phone No",
-                  labelText: "Enter Phone No",
-                  controller: companyPhoneController,
-                ),
+                        // select place
+                        MyDropdownField(
+                          hintText: 'Select Place',
+                        ),
 
-                // SizedBox(height: 20),
+                        // select state
+                        MyDropdownField(
+                          hintText: 'Select State',
+                        ),
 
-                // dropdown
-                MyDropdownField(
-                  hintText: 'Select Company Type',
-                ),
-                MyDropdownField(
-                  hintText: 'Select Place',
-                ),
+                        // select country
+                        MyDropdownField(
+                          hintText: 'Select Country',
+                        ),
 
-                MyDropdownField(
-                  hintText: 'Select State',
-                ),
-                MyDropdownField(
-                  hintText: 'Select Country',
-                ),
+                        // enter company address
+                        LoginTextfields(
+                          labelText: "Address",
+                          conatinerExpand: true,
+                        ),
 
-                LoginTextfields(
-                  labelText: "Address",
-                  conatinerExpand: true,
-                ),
+                        // pincode
+                        LoginTextfields(
+                          labelText: "Pincode",
+                          controller: companyPhoneController,
+                        ),
 
-                LoginTextfields(
-                  labelText: "Pincode",
-                  controller: companyPhoneController,
+                        SizedBox(height: 60),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
