@@ -38,6 +38,7 @@ class _LoginPageState extends State<LoginPage> {
                   "Admin Login",
                   style: AppFonts.Regular28(Colors.black),
                 ),
+
                 const SizedBox(height: 24),
 
                 Column(

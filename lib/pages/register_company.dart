@@ -1,3 +1,4 @@
+import 'package:admin_ecom/components/dropdown_field.dart';
 import 'package:admin_ecom/components/login_textfields.dart';
 import 'package:admin_ecom/responsive.dart';
 import 'package:admin_ecom/theme/global_font.dart';
@@ -63,31 +64,11 @@ class _RegisterCompanyState extends State<RegisterCompany> {
                   labelText: "Enter Phone No",
                   controller: companyPhoneController,
                 ),
+
                 SizedBox(height: 20),
-                DropdownButtonFormField(
-                  hint: Text('Select Company Type'),
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: Colors.grey.shade700,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: Colors.grey.shade400,
-                      ),
-                    ),
-                  ),
-                  items: [
-                    DropdownMenuItem(child: Text('123456'), value: 1),
-                    DropdownMenuItem(child: Text('123456'), value: 2),
-                    DropdownMenuItem(child: Text('123456'), value: 3),
-                    DropdownMenuItem(child: Text('123456'), value: 4),
-                  ],
-                  onChanged: (value) {},
-                ),
+
+                // dropdown
+                MyDropdownField(),
               ],
             ),
           ),
