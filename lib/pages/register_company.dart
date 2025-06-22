@@ -32,7 +32,7 @@ class _RegisterCompanyState extends State<RegisterCompany> {
             key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: 20,
+              spacing: 16,
               children: [
                 // message
                 Text(
@@ -83,11 +83,7 @@ class _RegisterCompanyState extends State<RegisterCompany> {
                 MyDropdownField(
                   hintText: 'Select Country',
                 ),
-                LoginTextfields(
-                  expands: true,
-                  labelText: 'Address',
-                  containerHeight: 'Address',
-                ),
+
                 LoginTextfields(
                   labelText: "Pincode",
                   controller: companyPhoneController,
