@@ -24,6 +24,7 @@ class _RegisterCompanyState extends State<RegisterCompany> {
     height = MediaQuery.sizeOf(context).height;
     width = MediaQuery.sizeOf(context).width;
     return Scaffold(
+      backgroundColor: Color(0xffF6F8FC),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.all(20),
@@ -31,14 +32,15 @@ class _RegisterCompanyState extends State<RegisterCompany> {
             key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 20,
               children: [
                 // message
                 Text(
                   "Register Your Company",
-                  style: AppFonts.Regular28(Colors.black),
+                  style: AppFonts.Medium24(Colors.black),
                 ),
 
-                SizedBox(height: 24),
+                // SizedBox(height: 24),
 
                 // company name
                 LoginTextfields(
@@ -47,7 +49,7 @@ class _RegisterCompanyState extends State<RegisterCompany> {
                   controller: companyNameController,
                 ),
 
-                SizedBox(height: 16),
+                // SizedBox(height: 16),
 
                 // company name
                 LoginTextfields(
@@ -56,7 +58,7 @@ class _RegisterCompanyState extends State<RegisterCompany> {
                   controller: companyEmailController,
                 ),
 
-                SizedBox(height: 16),
+                // SizedBox(height: 16),
 
                 // company name
                 LoginTextfields(
@@ -65,11 +67,30 @@ class _RegisterCompanyState extends State<RegisterCompany> {
                   controller: companyPhoneController,
                 ),
 
-                SizedBox(height: 20),
+                // SizedBox(height: 20),
 
                 // dropdown
                 MyDropdownField(
-                  labelText: "Field",
+                  hintText: 'Select Company Type',
+                ),
+                MyDropdownField(
+                  hintText: 'Select Place',
+                ),
+
+                MyDropdownField(
+                  hintText: 'Select State',
+                ),
+                MyDropdownField(
+                  hintText: 'Select Country',
+                ),
+                LoginTextfields(
+                  expands: true,
+                  labelText: 'Address',
+                  containerHeight: 'Address',
+                ),
+                LoginTextfields(
+                  labelText: "Pincode",
+                  controller: companyPhoneController,
                 ),
               ],
             ),

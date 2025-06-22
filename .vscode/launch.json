@@ -1,0 +1,29 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "admin_ecommerce",
+            "cwd": "Users/apple/ecom_admin/admin_ecommerce",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "admin_ecommerce (profile mode)",
+            "cwd": "Users/apple/ecom_admin/admin_ecommerce",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "admin_ecommerce (release mode)",
+            "cwd": "Users/apple/ecom_admin/admin_ecommerce",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
