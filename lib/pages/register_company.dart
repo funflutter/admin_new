@@ -68,7 +68,9 @@ class _RegisterCompanyState extends State<RegisterCompany> {
                 SizedBox(height: 20),
 
                 // dropdown
-                MyDropdownField(),
+                MyDropdownField(
+                  labelText: "Field",
+                ),
               ],
             ),
           ),
