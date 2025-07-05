@@ -8,7 +8,16 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade100,
+            blurRadius: 20,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
       width: double.infinity,
       child: Column(
         children: [
@@ -21,14 +30,13 @@ class CustomAppBar extends StatelessWidget {
                   children: [
                     Text(
                       "Welcome Back!",
-                      style: AppFonts.Medium12(Colors.black54),
+                      style: AppFonts.Medium14(Colors.black54),
                     ),
-                    SizedBox(height: 2),
 
                     // company name text
                     Text(
                       "Alpha Desings Pvt Ltd",
-                      style: AppFonts.Medium18(Colors.black),
+                      style: AppFonts.Medium20(Colors.black),
                     ),
                   ],
                 ),
