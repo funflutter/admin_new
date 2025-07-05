@@ -1,4 +1,4 @@
-import 'package:admin_ecom/pages/login_page.dart';
+import 'package:admin_ecom/pages/bottom_nav_control.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: BottomNavControl(),
     );
   }
 }

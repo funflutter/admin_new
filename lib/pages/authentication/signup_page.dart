@@ -1,6 +1,6 @@
 import 'package:admin_ecom/components/login_textfields.dart';
 import 'package:admin_ecom/components/my_button_1.dart';
-import 'package:admin_ecom/pages/login_page.dart';
+import 'package:admin_ecom/pages/authentication/login_page.dart';
 import 'package:admin_ecom/responsive.dart';
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
