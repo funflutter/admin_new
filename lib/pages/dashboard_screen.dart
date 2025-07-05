@@ -1,5 +1,4 @@
 import 'package:admin_ecom/components/custom_app_bar.dart';
-import 'package:admin_ecom/components/custom_button.dart';
 import 'package:admin_ecom/responsive.dart';
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
@@ -105,15 +104,15 @@ Widget _totalsContainer({String? title, String? value}) {
   );
 }
 
-Widget _incomeContainer(
-    {String? title,
-    String? value,
-    String? icon,
-    String? revenuValue,
-    bool removeRupee = false,
-    Color? buttonColor}) {
+Widget _incomeContainer({
+  String? title,
+  String? value,
+  String? icon,
+  String? revenuValue,
+  bool removeRupee = false,
+  Color? buttonColor,
+}) {
   return Container(
-    // width: ,
     padding: EdgeInsets.all(16),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(10),
@@ -144,11 +143,10 @@ Widget _incomeContainer(
           ],
         ),
         Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             SvgPicture.asset('assets/svg/filter.svg'),
-            SizedBox(height: 20),
+            SizedBox(height: 32),
             Container(
               height: 26,
               decoration: BoxDecoration(

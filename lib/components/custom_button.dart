@@ -1,6 +1,5 @@
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CustomButton extends StatelessWidget {
   final void Function()? onTap;
