@@ -1,7 +1,8 @@
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
-class MyButtonOne extends StatelessWidget {
+class CustomButton extends StatelessWidget {
   final void Function()? onTap;
   final String text;
   final TextStyle? style;
@@ -10,8 +11,9 @@ class MyButtonOne extends StatelessWidget {
   final BoxBorder? border;
   final double? height;
   final double? width;
+  final Widget? icon;
 
-  const MyButtonOne({
+  const CustomButton({
     super.key,
     required this.onTap,
     required this.text,
@@ -21,6 +23,7 @@ class MyButtonOne extends StatelessWidget {
     this.border,
     this.height,
     this.width,
+    this.icon,
   });
 
   @override
@@ -35,11 +38,16 @@ class MyButtonOne extends StatelessWidget {
           color: color,
           borderRadius: BorderRadius.circular(100),
         ),
-        child: Center(
-          child: Text(
-            text,
-            style: AppFonts.Medium14(textColor),
-          ),
+        child: Row(
+          children: [
+            // icon != null ? icon : SizedBox(),
+            Center(
+              child: Text(
+                text,
+                style: AppFonts.Medium14(textColor),
+              ),
+            ),
+          ],
         ),
       ),
     );

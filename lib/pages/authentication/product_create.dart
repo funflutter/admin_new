@@ -1,6 +1,6 @@
 import 'package:admin_ecom/components/dropdown_field.dart';
 import 'package:admin_ecom/components/login_textfields.dart';
-import 'package:admin_ecom/components/my_button_1.dart';
+import 'package:admin_ecom/components/custom_button.dart';
 import 'package:admin_ecom/pages/bottom_nav_control.dart';
 import 'package:admin_ecom/responsive.dart';
 import 'package:admin_ecom/theme/global_font.dart';
@@ -28,7 +28,7 @@ class ProductCreate extends StatelessWidget {
         ),
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
         child: SafeArea(
-          child: MyButtonOne(
+          child: CustomButton(
             height: 60,
             color: Colors.black,
             textColor: Colors.white,
@@ -58,7 +58,7 @@ class ProductCreate extends StatelessWidget {
                       "Add Product",
                       style: AppFonts.Medium24(Colors.black),
                     ),
-                    MyButtonOne(
+                    CustomButton(
                       onTap: () {},
                       text: 'Skip',
                       height: 36,

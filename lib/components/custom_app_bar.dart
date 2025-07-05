@@ -1,9 +1,21 @@
+import 'package:admin_ecom/components/custom_button.dart';
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+  final String? firstText;
+  final String? secondText;
+  final Widget? firstIcon;
+  final Widget? secondIcon;
+  final String? buttonText;
+  const CustomAppBar({
+    super.key,
+    this.firstText,
+    this.secondText,
+    this.firstIcon,
+    this.secondIcon,
+    this.buttonText,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,23 +36,44 @@ class CustomAppBar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Welcome Back!",
-                      style: AppFonts.Medium14(Colors.black54),
-                    ),
+                    firstText != null
+                        ? Text(
+                            firstText ?? '',
+                            style: AppFonts.Medium14(Colors.black54),
+                          )
+                        : SizedBox(),
 
                     // company name text
                     Text(
-                      "Alpha Desings Pvt Ltd",
+                      secondText ?? "",
                       style: AppFonts.Medium20(Colors.black),
                     ),
                   ],
                 ),
-                // Icon(icon)
+                Row(
+                  spacing: 10,
+                  children: [
+                    firstIcon != null ? _icons(firstIcon) : SizedBox(),
+                    secondIcon != null ? _icons(secondIcon) : SizedBox(),
+                    buttonText != null
+                        ? CustomButton(
+                          
+                            onTap: () {},
+                            text: buttonText ?? '',
+                            height: 36,
+                            width: 70,
+                            color: Colors.black,
+                            textColor: Colors.white,
+                            style: AppFonts.Medium18(Colors.black),
+                          )
+                        : SizedBox(),
+                  ],
+                ),
               ],
             ),
           ),
@@ -50,7 +83,7 @@ class CustomAppBar extends StatelessWidget {
   }
 }
 
-Widget _icons(String icon) {
+Widget _icons(Widget? child) {
   return Container(
     height: 32,
     width: 32,
@@ -59,7 +92,7 @@ Widget _icons(String icon) {
       borderRadius: BorderRadius.circular(16),
     ),
     child: Center(
-      child: SvgPicture.asset(icon),
+      child: child,
     ),
   );
 }

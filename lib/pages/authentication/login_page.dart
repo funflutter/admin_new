@@ -1,5 +1,5 @@
 import 'package:admin_ecom/components/login_textfields.dart';
-import 'package:admin_ecom/components/my_button_1.dart';
+import 'package:admin_ecom/components/custom_button.dart';
 import 'package:admin_ecom/pages/authentication/register_company.dart';
 import 'package:admin_ecom/pages/authentication/signup_page.dart';
 import 'package:admin_ecom/responsive.dart';
@@ -90,7 +90,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 24),
 
                 // sign in button
-                MyButtonOne(
+                CustomButton(
                   height: 60,
                   color: Colors.black,
                   textColor: Colors.white,
@@ -135,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 24),
 
                 // sign up button
-                MyButtonOne(
+                CustomButton(
                   height: 60,
                   color: Colors.white,
                   textColor: Colors.black,
