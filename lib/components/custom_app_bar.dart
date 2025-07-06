@@ -62,11 +62,9 @@ class CustomAppBar extends StatelessWidget {
                     secondIcon != null ? _icons(secondIcon) : SizedBox(),
                     buttonText != null
                         ? CustomButton(
-                          
                             onTap: () {},
                             text: buttonText ?? '',
-                            height: 36,
-                            width: 70,
+                            height: 30,
                             color: Colors.black,
                             textColor: Colors.white,
                             style: AppFonts.Medium18(Colors.black),

@@ -1,8 +1,8 @@
 import 'package:admin_ecom/components/bottom_nav_bar.dart';
-import 'package:admin_ecom/pages/my_products.dart';
 import 'package:admin_ecom/pages/dashboard_screen.dart';
 import 'package:admin_ecom/pages/my_history.dart';
 import 'package:admin_ecom/pages/my_profile.dart';
+import 'package:admin_ecom/pages/product_screen.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavControl extends StatefulWidget {
@@ -25,7 +25,7 @@ class _BottomNavControlState extends State<BottomNavControl> {
   // pages to display
   final List<Widget> _pages = [
     DashboardScreen(),
-    MyProducts(),
+    ProductScreen(),
     MyHistory(),
     MyProfile()
   ];

@@ -40,10 +40,13 @@ class CustomButton extends StatelessWidget {
         child: Row(
           children: [
             // icon != null ? icon : SizedBox(),
-            Center(
-              child: Text(
-                text,
-                style: AppFonts.Medium14(textColor),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              child: Center(
+                child: Text(
+                  text,
+                  style: AppFonts.Medium14(textColor),
+                ),
               ),
             ),
           ],
