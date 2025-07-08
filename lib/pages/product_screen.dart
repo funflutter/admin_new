@@ -1,4 +1,5 @@
 import 'package:admin_ecom/components/custom_app_bar.dart';
+import 'package:admin_ecom/components/textform_field.dart';
 import 'package:admin_ecom/responsive.dart';
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
@@ -43,32 +44,12 @@ class _ProductScreenState extends State<ProductScreen> {
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
                     children: [
-                      TextFormField(
-                        decoration: InputDecoration(
-                          prefixIcon: SizedBox(
-                            height: 20,
-                            width: 20,
-                            child: Center(
-                              child: Image.asset(
-                                'assets/png/search.png',
-                                height: 20,
-                                width: 20,
-                              ),
-                            ),
-                          ),
-                          hintText: 'Search...',
-                          hintStyle: AppFonts.Medium14(Color(0xff666666)),
-                          fillColor: Colors.white,
-                          filled: true,
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.transparent),
-                              borderRadius: BorderRadius.circular(100.0)),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.transparent),
-                              borderRadius: BorderRadius.circular(100.0)),
-                        ),
-                      ),
+                      // search text field
+                      MyTextFormField(),
+
                       SizedBox(height: 16),
+
+                      // filter's list
                       SizedBox(
                         height: 40,
                         child: ListView.builder(
@@ -95,7 +76,6 @@ class _ProductScreenState extends State<ProductScreen> {
                                         horizontal: 16.0),
                                     child: Center(
                                       child: Row(
-                                        spacing: 10,
                                         children: [
                                           Text(
                                             filterList[index],
@@ -104,6 +84,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                                     ? Colors.white
                                                     : Colors.black),
                                           ),
+                                          SizedBox(width: 10),
                                           Container(
                                             height: 20,
                                             decoration: BoxDecoration(
@@ -138,170 +119,171 @@ class _ProductScreenState extends State<ProductScreen> {
                           },
                         ),
                       ),
-                      SizedBox(height: 20),
-                      Container(
-                        height: height * 0.6,
-                        width: width,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Scrollbar(
-                          radius: Radius.circular(100),
-                          thickness: 3,
-                          child: ListView.builder(
-                            itemCount: 5,
-                            itemBuilder: (context, index) {
-                              return Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(12.0),
-                                    child: Row(
-                                      children: [
-                                        ClipRRect(
-                                          child: Container(
-                                            height: 80,
-                                            width: 90,
-                                            decoration: BoxDecoration(
-                                              color: Color(0xffE6E6E6),
-                                              borderRadius:
-                                                  BorderRadius.circular(6),
-                                            ),
-                                          ),
-                                        ),
-                                        SizedBox(width: 10),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Bracelet (Gold)',
-                                                  style: AppFonts.semibold16(
-                                                      Colors.black),
-                                                ),
-                                                Row(
-                                                  spacing: 4,
-                                                  children: [
-                                                    Text(
-                                                      '₹899/-',
-                                                      style:
-                                                          AppFonts.semibold16(
-                                                        Color(0xff2D930B),
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      '₹1200',
-                                                      style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        letterSpacing: -0.3,
-                                                        color:
-                                                            Color(0xff666666),
-                                                        decoration:
-                                                            TextDecoration
-                                                                .lineThrough,
-                                                        decorationColor:
-                                                            Color(0xff666666),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                SizedBox(height: 16),
-                                                Container(
-                                                  height: 22,
-                                                  decoration: BoxDecoration(
-                                                      color: Color(0xffEAF6EC),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              100)),
-                                                  child: Padding(
-                                                    padding: const EdgeInsets
-                                                        .symmetric(
-                                                        horizontal: 8.0),
-                                                    child: Row(
-                                                      spacing: 5,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Text(
-                                                          '8%Discount',
-                                                          style:
-                                                              AppFonts.Medium12(
-                                                            Color(0xff28A745),
-                                                          ),
-                                                        ),
-                                                        Container(
-                                                          height: 10,
-                                                          width: 2,
-                                                          color:
-                                                              Color(0xff5E625E),
-                                                        ),
-                                                        Text(
-                                                          '9 Days Left',
-                                                          style:
-                                                              AppFonts.Medium12(
-                                                            Color(0xff5E625E),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Container(
-                                              height: 20,
-                                              decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(50),
-                                                  color: Colors.black),
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        horizontal: 6.0),
-                                                child: Center(
-                                                  child: Text(
-                                                    '12',
-                                                    style: AppFonts.Medium12(
-                                                        Colors.white),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 12.0, right: 12.0),
-                                    child: Divider(
-                                      color: Color(0xffE6E6E6),
-                                      thickness: 1,
-                                    ),
-                                  )
-                                ],
-                              );
-                            },
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ),
+
+                // product's list
+                Expanded(
+                  child: Scrollbar(
+                    radius: Radius.circular(100),
+                    thickness: 3,
+                    child: SingleChildScrollView(
+                      padding: const EdgeInsets.all(12),
+                      child: Container(
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade100,
+                              blurRadius: 20,
+                              offset: Offset(0, 0),
+                            ),
+                          ],
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          children: List.generate(5, (index) {
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    // Image Box
+                                    Container(
+                                      height: 80,
+                                      width: 90,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xffE6E6E6),
+                                        borderRadius: BorderRadius.circular(6),
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+
+                                    // Product info + right side number
+                                    Expanded(
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          // Left Column
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Bracelet (Gold)',
+                                                style: AppFonts.semibold16(
+                                                    Colors.black),
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Text(
+                                                    '₹899/-',
+                                                    style: AppFonts.semibold16(
+                                                      Color(0xff2D930B),
+                                                    ),
+                                                  ),
+                                                  SizedBox(width: 4),
+                                                  Text(
+                                                    '₹1200',
+                                                    style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      letterSpacing: -0.3,
+                                                      color: Color(0xff666666),
+                                                      decoration: TextDecoration
+                                                          .lineThrough,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+
+                                              SizedBox(height: 16),
+
+                                              // discount container
+                                              Container(
+                                                height: 22,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xffEAF6EC),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          100),
+                                                ),
+                                                child: Padding(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 8.0),
+                                                  child: Row(
+                                                    children: [
+                                                      Text(
+                                                        '8% Discount',
+                                                        style:
+                                                            AppFonts.Medium12(
+                                                          Color(0xff28A745),
+                                                        ),
+                                                      ),
+                                                      SizedBox(width: 5),
+                                                      Container(
+                                                          height: 10,
+                                                          width: 1,
+                                                          color: Color(
+                                                              0xff5E625E)),
+                                                      SizedBox(width: 5),
+                                                      Text(
+                                                        '9 Days Left',
+                                                        style:
+                                                            AppFonts.Medium12(
+                                                          Color(0xff5E625E),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+
+                                          // Quantity Circle
+                                          Container(
+                                            height: 20,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(50),
+                                              color: Colors.black,
+                                            ),
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 6.0),
+                                            child: Center(
+                                              child: Text(
+                                                '12',
+                                                style: AppFonts.Medium12(
+                                                    Colors.white),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 10),
+                                if (index != 4) // Hides divider after last item
+                                  Divider(
+                                      color: Color(0xffE6E6E6), thickness: 1),
+                                if (index != 4) SizedBox(height: 10),
+                              ],
+                            );
+                          }),
+                        ),
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           ),
