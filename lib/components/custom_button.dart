@@ -37,19 +37,14 @@ class CustomButton extends StatelessWidget {
           color: color,
           borderRadius: BorderRadius.circular(100),
         ),
-        child: Row(
-          children: [
-            // icon != null ? icon : SizedBox(),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0),
-              child: Center(
-                child: Text(
-                  text,
-                  style: AppFonts.Medium14(textColor),
-                ),
-              ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          child: Center(
+            child: Text(
+              text,
+              style: AppFonts.Medium14(textColor),
             ),
-          ],
+          ),
         ),
       ),
     );

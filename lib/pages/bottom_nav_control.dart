@@ -1,8 +1,8 @@
 import 'package:admin_ecom/components/bottom_nav_bar.dart';
-import 'package:admin_ecom/pages/dashboard_screen.dart';
-import 'package:admin_ecom/pages/orders_screen.dart';
-import 'package:admin_ecom/pages/profile_screen.dart';
-import 'package:admin_ecom/pages/product_screen.dart';
+import 'package:admin_ecom/pages/dashboard/dashboard_screen.dart';
+import 'package:admin_ecom/pages/orders/orders_screen.dart';
+import 'package:admin_ecom/pages/profile/profile_screen.dart';
+import 'package:admin_ecom/pages/products/product_screen.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavControl extends StatefulWidget {

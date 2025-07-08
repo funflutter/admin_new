@@ -1,6 +1,7 @@
 import 'package:admin_ecom/components/custom_button.dart';
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String? firstText;
@@ -8,6 +9,7 @@ class CustomAppBar extends StatelessWidget {
   final Widget? firstIcon;
   final Widget? secondIcon;
   final String? buttonText;
+  final void Function()? onTap;
   const CustomAppBar({
     super.key,
     this.firstText,
@@ -15,6 +17,7 @@ class CustomAppBar extends StatelessWidget {
     this.firstIcon,
     this.secondIcon,
     this.buttonText,
+    this.onTap,
   });
 
   @override
@@ -36,8 +39,39 @@ class CustomAppBar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                onTap != null
+                    ? GestureDetector(
+                        onTap: onTap,
+                        child: Container(
+                          height: 36,
+                          width: 36,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Color(0xffE6E6E6),
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.shade100,
+                                blurRadius: 20,
+                                offset: Offset(0, 2),
+                              ),
+                            ],
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          child: Center(
+                            child: SvgPicture.asset(
+                              'assets/svg/arrow_back.svg',
+                              height: 20,
+                              width: 20,
+                            ),
+                          ),
+                        ),
+                      )
+                    : SizedBox(),
+                onTap != null ? SizedBox(width: 10) : SizedBox(),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -55,6 +89,7 @@ class CustomAppBar extends StatelessWidget {
                     ),
                   ],
                 ),
+                Spacer(),
                 Row(
                   spacing: 10,
                   children: [

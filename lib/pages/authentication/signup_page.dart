@@ -1,7 +1,7 @@
 import 'package:admin_ecom/components/login_textfields.dart';
 import 'package:admin_ecom/components/custom_button.dart';
 import 'package:admin_ecom/pages/authentication/login_page.dart';
-import 'package:admin_ecom/responsive.dart';
+import 'package:admin_ecom/constant.dart';
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
 
