@@ -1,4 +1,5 @@
 import 'package:admin_ecom/pages/authentication/login_page.dart';
+import 'package:admin_ecom/pages/orders/order_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: OrderView(),
     );
   }
 }
