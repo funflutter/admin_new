@@ -32,10 +32,10 @@ class _ProductScreenState extends State<ProductScreen> {
     width = MediaQuery.sizeOf(context).width;
     return Builder(
       builder: (context) {
-        return SafeArea(
-          child: Scaffold(
-            backgroundColor: Color(0xffF9FBFE),
-            body: Column(
+        return Scaffold(
+          backgroundColor: Color(0xffF9FBFE),
+          body: SafeArea(
+            child: Column(
               children: [
                 CustomAppBar(
                   secondText: 'My Products',

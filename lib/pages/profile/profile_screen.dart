@@ -18,10 +18,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
     width = MediaQuery.sizeOf(context).width;
     return Builder(
       builder: (context) {
-        return SafeArea(
-          child: Scaffold(
-            backgroundColor: Color(0xffF9FBFE),
-            body: Column(
+        return Scaffold(
+          backgroundColor: Color(0xffF9FBFE),
+          body: SafeArea(
+            child: Column(
               children: [
                 CustomAppBar(
                   secondText: 'My Profile',
@@ -323,6 +323,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                           categoryList(
                             leadImage: SvgPicture.asset(
+                              'assets/svg/payment.svg',
+                              height: 22,
+                            ),
+                            title: 'Payment Methods',
+                          ),
+                          categoryList(
+                            leadImage: SvgPicture.asset(
+                              'assets/svg/customer.svg',
+                              height: 22,
+                            ),
+                            title: 'Customer List & Transactions',
+                          ),
+                          categoryList(
+                            leadImage: SvgPicture.asset(
                               'assets/svg/logout.svg',
                               height: 22,
                             ),
@@ -359,7 +373,7 @@ Widget categoryList({required Widget leadImage, required String title}) {
         color: Colors.white,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 16),
         child: Row(
           children: [
             leadImage,
@@ -370,7 +384,7 @@ Widget categoryList({required Widget leadImage, required String title}) {
             ),
             Spacer(),
             SvgPicture.asset(
-              'assets/svg/rightarrow.svg',
+              'assets/svg/right_arrow.svg',
               height: 18,
             ),
           ],
