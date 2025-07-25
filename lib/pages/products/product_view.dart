@@ -1,6 +1,7 @@
 import 'package:admin_ecom/components/custom_app_bar.dart';
 import 'package:admin_ecom/components/custom_button.dart';
 import 'package:admin_ecom/constant.dart';
+import 'package:admin_ecom/pages/authentication/edit_product.dart';
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
 
@@ -26,11 +27,17 @@ class ProductView extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
         child: SafeArea(
           child: CustomButton(
-              height: 60,
-              color: Colors.black,
-              textColor: Colors.white,
-              text: "Edit Product Details",
-              onTap: () {}),
+            height: 60,
+            color: Colors.black,
+            textColor: Colors.white,
+            text: "Edit Product Details",
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => EditProduct(),
+              ),
+            ),
+          ),
         ),
       ),
       body: SafeArea(

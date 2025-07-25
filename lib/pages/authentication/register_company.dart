@@ -141,7 +141,7 @@ class _RegisterCompanyState extends State<RegisterCompany> {
                                 controller: companyPhoneController,
                               ),
 
-                              SizedBox(height: 80),
+                              SizedBox(height: 100),
                             ],
                           ),
                         ),

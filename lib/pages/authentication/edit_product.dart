@@ -2,12 +2,11 @@ import 'package:admin_ecom/components/custom_app_bar.dart';
 import 'package:admin_ecom/components/dropdown_field.dart';
 import 'package:admin_ecom/components/login_textfields.dart';
 import 'package:admin_ecom/components/custom_button.dart';
-import 'package:admin_ecom/pages/bottom_nav_control.dart';
 import 'package:admin_ecom/constant.dart';
 import 'package:flutter/material.dart';
 
-class ProductCreate extends StatelessWidget {
-  const ProductCreate({super.key});
+class EditProduct extends StatelessWidget {
+  const EditProduct({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,13 +30,8 @@ class ProductCreate extends StatelessWidget {
             height: 60,
             color: Colors.black,
             textColor: Colors.white,
-            text: "Add Product",
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => BottomNavControl(),
-              ),
-            ),
+            text: "Save",
+            onTap: () => Navigator.pop(context),
           ),
         ),
       ),
@@ -48,8 +42,8 @@ class ProductCreate extends StatelessWidget {
           child: Column(
             children: [
               CustomAppBar(
-                secondText: "Add product",
-                buttonText: 'Skip',
+                onTap: () => Navigator.pop(context),
+                secondText: "Edit product",
               ),
               Expanded(
                 child: Padding(
@@ -66,38 +60,43 @@ class ProductCreate extends StatelessWidget {
                               AbsorbPointer(
                                 child: LoginTextfields(
                                   prefixIcon: Icon(Icons.add),
-                                  hintText: "Add Product Images",
+                                  hintText: "Edit/Add More Product Images",
                                 ),
                               ),
 
                               // company name
                               LoginTextfields(
-                                labelText: "Product Name",
+                                labelText: "Bracelet (Gold)",
                               ),
 
                               // product category
                               MyDropdownField(
-                                hintText: 'Select Product Category',
+                                hintText: 'Bracelets',
                               ),
 
                               // stock quantity
                               LoginTextfields(
-                                labelText: "Enter Stock Quantity",
+                                labelText: "40",
+                              ),
+
+                              // stock quantity
+                              LoginTextfields(
+                                labelText: "Add Stock Quantity",
                               ),
 
                               // MRP
                               LoginTextfields(
-                                labelText: "MRP (₹)",
+                                labelText: "₹1200.00",
                               ),
 
                               // selling price
                               LoginTextfields(
-                                labelText: "Selling Price (₹)",
+                                labelText: "₹899.00",
                               ),
 
                               // discount price
                               LoginTextfields(
-                                labelText: "Discount (%)",
+                                labelText: "8%",
                               ),
 
                               // // choose offer validity (select date, time)
@@ -136,7 +135,7 @@ class ProductCreate extends StatelessWidget {
 
                               // delivery charge price
                               LoginTextfields(
-                                labelText: "Delivery Charges (₹)",
+                                labelText: "₹50.00",
                               ),
 
                               SizedBox(height: 100),
