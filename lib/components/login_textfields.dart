@@ -39,68 +39,79 @@ class _LoginTextfieldsState extends State<LoginTextfields> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      maxLines: widget.conatinerExpand ? 4 : 1,
-      textAlign: TextAlign.left,
-      textAlignVertical: TextAlignVertical.top,
-      autovalidateMode: AutovalidateMode.onUserInteraction,
-      controller: widget.controller,
-      validator: widget.validator,
-      obscureText: widget.isPassword ? _obscureText : false,
-      style: AppFonts.Medium16(Colors.black),
-      decoration: InputDecoration(
-        prefixIcon: widget.prefixIcon,
-        alignLabelWithHint: true,
-        fillColor: Color(0xffFFFFFF),
-        filled: true,
-        hintText: widget.hintText,
-        hintStyle: AppFonts.Medium16(Colors.black38),
-        labelText: widget.labelText,
-        labelStyle: AppFonts.Medium16(Colors.black38),
-        contentPadding: const EdgeInsets.symmetric(
-          vertical: 18,
-          horizontal: 18,
-        ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: Colors.transparent,
+    return Container(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade100,
+            blurRadius: 20,
+            offset: Offset(0, 0),
           ),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: Colors.transparent,
+        ],
+      ),
+      child: TextFormField(
+        maxLines: widget.conatinerExpand ? 4 : 1,
+        textAlign: TextAlign.left,
+        textAlignVertical: TextAlignVertical.top,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        controller: widget.controller,
+        validator: widget.validator,
+        obscureText: widget.isPassword ? _obscureText : false,
+        style: AppFonts.Medium16(Colors.black),
+        decoration: InputDecoration(
+          prefixIcon: widget.prefixIcon,
+          alignLabelWithHint: true,
+          fillColor: Color(0xffFFFFFF),
+          filled: true,
+          hintText: widget.hintText,
+          hintStyle: AppFonts.Medium16(Colors.black38),
+          labelText: widget.labelText,
+          labelStyle: AppFonts.Medium16(Colors.black38),
+          contentPadding: const EdgeInsets.symmetric(
+            vertical: 18,
+            horizontal: 18,
           ),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: Colors.red,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
           ),
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: Colors.red,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+              color: Colors.grey.shade300,
+            ),
           ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+              color: Colors.transparent,
+            ),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(
+              color: Colors.red,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(
+              color: Colors.red,
+            ),
+          ),
+          suffixIcon: widget.isPassword
+              ? IconButton(
+                  icon: Icon(
+                    _obscureText ? Icons.visibility_off : Icons.visibility,
+                    color: Colors.grey.shade600,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _obscureText = !_obscureText;
+                    });
+                  },
+                )
+              : null,
         ),
-        suffixIcon: widget.isPassword
-            ? IconButton(
-                icon: Icon(
-                  _obscureText ? Icons.visibility_off : Icons.visibility,
-                  color: Colors.grey.shade600,
-                ),
-                onPressed: () {
-                  setState(() {
-                    _obscureText = !_obscureText;
-                  });
-                },
-              )
-            : null,
       ),
     );
   }

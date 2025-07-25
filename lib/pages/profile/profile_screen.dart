@@ -1,5 +1,6 @@
 import 'package:admin_ecom/components/custom_app_bar.dart';
 import 'package:admin_ecom/constant.dart';
+import 'package:admin_ecom/pages/profile/monthly_budget_tracker.dart';
 import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -300,12 +301,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           SizedBox(height: 16),
 
                           // cta's
-                          categoryList(
-                            leadImage: SvgPicture.asset(
-                              'assets/svg/money.svg',
-                              height: 22,
+                          GestureDetector(
+                            onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MonthlyBudgetTracker(),
+                              ),
                             ),
-                            title: 'Monthly Budget Tracker',
+                            child: categoryList(
+                              leadImage: SvgPicture.asset(
+                                'assets/svg/money.svg',
+                                height: 22,
+                              ),
+                              title: 'Monthly Budget Tracker',
+                            ),
                           ),
                           categoryList(
                             leadImage: SvgPicture.asset(

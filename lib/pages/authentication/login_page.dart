@@ -33,14 +33,24 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: height / 4),
+                SizedBox(height: height / 6),
+                // Message
+                Text(
+                  "Aharyam Jewellery",
+                  style: AppFonts.Medium32(
+                    const Color.fromARGB(255, 142, 62, 32),
+                  ),
+                ),
+
+                const SizedBox(height: 40),
+
                 // Message
                 Text(
                   "Admin Login",
-                  style: AppFonts.regular32(Colors.black),
+                  style: AppFonts.Regular28(Colors.black),
                 ),
 
-                const SizedBox(height: 20),
+                const SizedBox(height: 16),
 
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,

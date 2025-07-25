@@ -12,80 +12,91 @@ class MyDropdownField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField2(
-      dropdownStyleData: DropdownStyleData(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.shade100, // Light shadow
-              blurRadius: 16,
-              offset: Offset(0, 0), // Drop slightly down
-            ),
-          ],
-        ),
-        offset: const Offset(0, -4),
+    return Container(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade100,
+            blurRadius: 20,
+            offset: Offset(0, 0),
+          ),
+        ],
       ),
-      isExpanded: true,
-      decoration: InputDecoration(
-        hintText: hintText,
-        iconColor: Colors.transparent,
-        fillColor: Color(0xffFFFFFF),
-        hintTextDirection: TextDirection.ltr,
-        filled: true,
-        hintStyle: AppFonts.Medium16(Colors.black54),
-        contentPadding: const EdgeInsets.symmetric(
-          vertical: 18,
-          horizontal: 18,
-        ),
-        alignLabelWithHint: true,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: Colors.transparent,
+      child: DropdownButtonFormField2(
+        dropdownStyleData: DropdownStyleData(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(14),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.shade100, // Light shadow
+                blurRadius: 16,
+                offset: Offset(0, 0), // Drop slightly down
+              ),
+            ],
           ),
+          offset: const Offset(0, -4),
         ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: Colors.transparent,
+        isExpanded: true,
+        decoration: InputDecoration(
+          hintText: hintText,
+          iconColor: Colors.transparent,
+          fillColor: Color(0xffFFFFFF),
+          hintTextDirection: TextDirection.ltr,
+          filled: true,
+          hintStyle: AppFonts.Medium16(Colors.black54),
+          contentPadding: const EdgeInsets.symmetric(
+            vertical: 18,
+            horizontal: 18,
           ),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: Colors.red,
+          alignLabelWithHint: true,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
           ),
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: Colors.red,
-          ),
-        ),
-      ),
-      iconStyleData: IconStyleData(
-        icon: SizedBox(
-          height: 24,
-          width: 24,
-          child: Center(
-            child: SvgPicture.asset(
-              'assets/svg/arrow_down.svg',
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+              color: Colors.grey.shade300,
             ),
           ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+              color: Colors.transparent,
+            ),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(
+              color: Colors.red,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(
+              color: Colors.red,
+            ),
+          ),
         ),
+        iconStyleData: IconStyleData(
+          icon: SizedBox(
+            height: 24,
+            width: 24,
+            child: Center(
+              child: SvgPicture.asset(
+                'assets/svg/arrow_down.svg',
+              ),
+            ),
+          ),
+        ),
+        items: [
+          DropdownMenuItem(child: Text('123456'), value: 1),
+          DropdownMenuItem(child: Text('123456'), value: 2),
+          DropdownMenuItem(child: Text('123456'), value: 3),
+          DropdownMenuItem(child: Text('123456'), value: 4),
+        ],
+        onChanged: (value) {},
       ),
-      items: [
-        DropdownMenuItem(child: Text('123456'), value: 1),
-        DropdownMenuItem(child: Text('123456'), value: 2),
-        DropdownMenuItem(child: Text('123456'), value: 3),
-        DropdownMenuItem(child: Text('123456'), value: 4),
-      ],
-      onChanged: (value) {},
     );
   }
 }

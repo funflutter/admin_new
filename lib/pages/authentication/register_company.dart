@@ -1,9 +1,9 @@
+import 'package:admin_ecom/components/custom_app_bar.dart';
 import 'package:admin_ecom/components/dropdown_field.dart';
 import 'package:admin_ecom/components/login_textfields.dart';
 import 'package:admin_ecom/components/custom_button.dart';
 import 'package:admin_ecom/pages/authentication/product_create.dart';
 import 'package:admin_ecom/constant.dart';
-import 'package:admin_ecom/theme/global_font.dart';
 import 'package:flutter/material.dart';
 
 class RegisterCompany extends StatefulWidget {
@@ -57,81 +57,100 @@ class _RegisterCompanyState extends State<RegisterCompany> {
       body: SafeArea(
         child: Form(
           key: _formKey,
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // message
-                Text(
-                  "Register Your Company",
-                  style: AppFonts.Medium24(Colors.black),
-                ),
+          child: Column(
+            children: [
+              // title
+              CustomAppBar(
+                secondText: "Register Your Company",
+              ),
 
-                SizedBox(height: 16),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // company name
+                      Flexible(
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              SizedBox(height: 4),
+                              LoginTextfields(
+                                labelText: "Enter Company Name",
+                                controller: companyNameController,
+                              ),
 
-                // company name
-                Flexible(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      spacing: 16,
-                      children: [
-                        LoginTextfields(
-                          labelText: "Enter Company Name",
-                          controller: companyNameController,
-                        ), // company name
-                        LoginTextfields(
-                          labelText: "Enter Email Id",
-                          controller: companyEmailController,
+                              SizedBox(height: 16),
+
+                              // company name
+                              LoginTextfields(
+                                labelText: "Enter Email Id",
+                                controller: companyEmailController,
+                              ),
+
+                              SizedBox(height: 16),
+
+                              // company name
+                              LoginTextfields(
+                                labelText: "Enter Phone No",
+                                controller: companyPhoneController,
+                              ),
+
+                              SizedBox(height: 16),
+
+                              // Company type
+                              MyDropdownField(
+                                hintText: 'Select Company Type',
+                              ),
+
+                              SizedBox(height: 16),
+
+                              // select place
+                              MyDropdownField(
+                                hintText: 'Select Place',
+                              ),
+
+                              SizedBox(height: 16),
+
+                              // select state
+                              MyDropdownField(
+                                hintText: 'Select State',
+                              ),
+
+                              SizedBox(height: 16),
+
+                              // select country
+                              MyDropdownField(
+                                hintText: 'Select Country',
+                              ),
+
+                              SizedBox(height: 16),
+
+                              // enter company address
+                              LoginTextfields(
+                                labelText: "Address",
+                                conatinerExpand: true,
+                              ),
+
+                              SizedBox(height: 16),
+
+                              // pincode
+                              LoginTextfields(
+                                labelText: "Pincode",
+                                controller: companyPhoneController,
+                              ),
+
+                              SizedBox(height: 80),
+                            ],
+                          ),
                         ),
-
-                        // company name
-                        LoginTextfields(
-                          labelText: "Enter Phone No",
-                          controller: companyPhoneController,
-                        ),
-
-                        // SizedBox(height: 20),
-
-                        // Company type
-                        MyDropdownField(
-                          hintText: 'Select Company Type',
-                        ),
-
-                        // select place
-                        MyDropdownField(
-                          hintText: 'Select Place',
-                        ),
-
-                        // select state
-                        MyDropdownField(
-                          hintText: 'Select State',
-                        ),
-
-                        // select country
-                        MyDropdownField(
-                          hintText: 'Select Country',
-                        ),
-
-                        // enter company address
-                        LoginTextfields(
-                          labelText: "Address",
-                          conatinerExpand: true,
-                        ),
-
-                        // pincode
-                        LoginTextfields(
-                          labelText: "Pincode",
-                          controller: companyPhoneController,
-                        ),
-
-                        SizedBox(height: 60),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
